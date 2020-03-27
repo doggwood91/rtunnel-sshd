@@ -5,6 +5,11 @@ Factory device can authenticate with using their private device gateway key.
 It works by periodically (every 20 minutes) synchronizing all the device
 public keys into the container's authorized_keys file.
 
+Launch the contain with:
+~~~
+  docker run -p2222:2222 foundries/rtunnel-sshd <A foundries.io API token>
+~~~
+
 Devices can then log into this system with a command like:
 ~~~
  ssh -R0:localhost:22 -i /var/sota/pkey.pem -p 2222 <host or ip of your container>
