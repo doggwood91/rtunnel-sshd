@@ -14,3 +14,12 @@ The sshd server has been patched with some code to dynamically track the
 reverse tunnel port for each device connection and creates files for each
 connection under `/devices`. This allows fleet administrators to attach to
 this container and access devices with a command like: `/devices/<my-device`.
+
+## Options
+
+Setting `-e FACTORY=<your factory>` will make the service only sync keys for
+the given factory. *(This can be useful for users that belong to multiple
+factories)*.
+
+To improve security, you should bind mount your own SSH host keys under
+`/usr/local/etc`.
