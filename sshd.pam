@@ -1,0 +1,1 @@
+session     optional    pam_exec.so quiet /lmp-device-session.py
